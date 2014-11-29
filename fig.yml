@@ -1,0 +1,10 @@
+redis:
+  image: redis:latest
+unhangout:
+  build: unhangout
+  links:
+   - redis
+  ports:
+   - "7777:7777"
+  volumes:
+   - conf.json:/opt/unhangout/conf.json
